@@ -1,12 +1,11 @@
 import React from "react";
-import myImage from "../Images/photo-1591768793355-74d04bb6608f.jpeg"
 import Carousel from "react-bootstrap/Carousel"
 function Home(){
     return (
             <Carousel>
               <Carousel.Item>
                 <img
-                  className="d-inline w-100"
+                  className="d-inline h-50 w-100"
                  src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80/800x400?text=First slide&bg=373940"
                   alt="Truck Image"
                 />
