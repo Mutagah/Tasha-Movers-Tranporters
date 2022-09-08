@@ -40,7 +40,13 @@ function RegisterTask(){
             },
             body : JSON.stringify(formdata)
         })
-
+        setformdata({
+            company_name:"",
+            task_description:"",
+            task_location_departure:"",
+            task_destination:"",
+            estimated_distance_in_km:""
+        })
     }
     return(
         <div className="mt-3 mb-5">

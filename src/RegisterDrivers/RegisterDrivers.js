@@ -1,6 +1,7 @@
-import React,{useState} from "react"
+import React,{useEffect, useState} from "react"
 import useFetch from "../customHooks/useFetch"
 function RegisterDrivers(){
+    // const [data, setData] = useState([])
     const {data} = useFetch("http://localhost:9292/drivers")
     const displayDrivers = data.map((element)=>
     {
@@ -40,6 +41,17 @@ function RegisterDrivers(){
                 "Content-Type" : "application/json"
             },
             body : JSON.stringify(driverData)
+        })
+
+        setdriverData({
+            name:"",
+            license_no:"",
+            years_of_experience:"",
+            task_destination:"",
+            estimated_distance_in_km:"",
+            vehicle_type_licensed: "Trucks",
+            home_location:"",
+            driver_image_url: ""
         })
     }
     return(
