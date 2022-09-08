@@ -10,7 +10,16 @@ function RegisterTask(){
         task_destination:"",
         estimated_distance_in_km:""
     })
-    const displayVehicles = data.map((element)=>
+    const [searchCriteria, setSearchCriteria] = useState("")
+    function handleSearchCriteria(event)
+    {
+        setSearchCriteria(event.target.value)
+    }
+     const filteredDisplay = data.filter((vehicle)=>
+         vehicle.vehicle_type.toLowerCase().includes(searchCriteria.toLowerCase())
+
+    )  
+    const displayVehicles = filteredDisplay.map((element)=>
         {
             return( 
         <div class="col-md-3">
@@ -25,10 +34,13 @@ function RegisterTask(){
            
         </div>
     )})
+    
     function handleChange(event)
     {
         setformdata({...formdata,[event.target.name]:event.target.value})
     }
+
+
     // console.log(formdata)
     function handleSubmit(event){
         event.preventDefault()
@@ -48,6 +60,7 @@ function RegisterTask(){
             estimated_distance_in_km:""
         })
     }
+ 
     return(
         <div className="mt-3 mb-5">
             <h3 className="mt-4">Please fill in your taks details here</h3>
@@ -87,7 +100,7 @@ function RegisterTask(){
             </div>
         </form>
         <h3 className="mt-4"> Please Book your preffered means on vehicle</h3>
-        <input type="text" placeholder="Enter car type:" className="form-control form-control-lg"/>
+        <input type="text" placeholder="Enter car type:" className="form-control form-control-lg" onChange={handleSearchCriteria}/>
         <div className="row mt-2 g-1">
         {displayVehicles}
         </div>

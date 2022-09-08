@@ -1,9 +1,54 @@
 import React,{useEffect, useState} from "react"
-import useFetch from "../customHooks/useFetch"
+// import useFetch from "../customHooks/useFetch"
 function RegisterDrivers(){
-    // const [data, setData] = useState([])
-    const {data} = useFetch("http://localhost:9292/drivers")
-    const displayDrivers = data.map((element)=>
+     const [drivergeneraldata,setDriverGeneralData] = useState([])
+    useEffect(()=>
+    fetch("http://localhost:9292/drivers")
+    .then((response)=> response.json())
+    .then((data)=> setDriverGeneralData(data)),
+    [])
+
+    const [driverData, setdriverData] =useState(
+        {
+            name:"",
+            license_no:"",
+            years_of_experience:"",
+            task_destination:"",
+            estimated_distance_in_km:"",
+            vehicle_type_licensed: "Trucks",
+            home_location:"",
+            driver_image_url: ""
+        }
+    )
+
+    function handleChange(event){
+        setdriverData({...driverData,[event.target.name]:event.target.value})
+    }
+
+    function handleSubmit(event){
+        event.preventDefault()
+        fetch("http://localhost:9292/drivers",{
+            method : "POST",
+            headers :
+            {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(driverData)
+        }).then((resp)=> resp.json())
+        .then((data) => setDriverGeneralData([...drivergeneraldata,data]))
+
+        setdriverData({
+            name:"",
+            license_no:"",
+            years_of_experience:"",
+            task_destination:"",
+            estimated_distance_in_km:"",
+            vehicle_type_licensed: "Trucks",
+            home_location:"",
+            driver_image_url: ""
+        })
+    }
+    const displayDrivers = drivergeneraldata.map((element)=>
     {
         return( 
     <div class="col-md-3">
@@ -17,43 +62,6 @@ function RegisterDrivers(){
         </div>
     </div>
 )})
-    const [driverData, setdriverData] =useState(
-        {
-            name:"",
-            license_no:"",
-            years_of_experience:"",
-            task_destination:"",
-            estimated_distance_in_km:"",
-            vehicle_type_licensed: "Trucks",
-            home_location:"",
-            driver_image_url: ""
-        }
-    )
-    function handleChange(event){
-        setdriverData({...driverData,[event.target.name]:event.target.value})
-    }
-    function handleSubmit(event){
-        event.preventDefault()
-        fetch("http://localhost:9292/drivers",{
-            method : "POST",
-            headers :
-            {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify(driverData)
-        })
-
-        setdriverData({
-            name:"",
-            license_no:"",
-            years_of_experience:"",
-            task_destination:"",
-            estimated_distance_in_km:"",
-            vehicle_type_licensed: "Trucks",
-            home_location:"",
-            driver_image_url: ""
-        })
-    }
     return(
         <div className="mt-3 mb-5">
         <h3 className="mt-4">Please fill in your details here</h3>
