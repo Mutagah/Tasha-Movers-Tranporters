@@ -29,7 +29,7 @@ function RegisterTask(){
     {
         setformdata({...formdata,[event.target.name]:event.target.value})
     }
-    console.log(formdata)
+    // console.log(formdata)
     function handleSubmit(event){
         event.preventDefault()
         fetch("http://localhost:9292/tasks",{

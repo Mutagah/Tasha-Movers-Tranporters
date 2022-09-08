@@ -2,7 +2,10 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel"
 function Home(){
     return (
-            <Carousel>
+           <div className="mt-3 container">
+            <div className="row">
+              <div className="col-md-8 col-lg-10 offset-md-2 offset-lg-1">
+              <Carousel>
               <Carousel.Item>
                 <img
                   className="d-inline h-50 w-100"
@@ -34,6 +37,9 @@ function Home(){
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
+              </div>
+            </div>
+           </div>
           );
         }
 export default Home;
