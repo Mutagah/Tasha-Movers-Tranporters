@@ -1,11 +1,12 @@
 import React,{useEffect, useState} from "react"
-// import useFetch from "../customHooks/useFetch"
 function RegisterDrivers(){
      const [drivergeneraldata,setDriverGeneralData] = useState([])
-    useEffect(()=>
-    fetch("http://localhost:9292/drivers")
+    useEffect(()=>{
+    fetch("https://tasha-movers-backend.herokuapp.com/drivers")
     .then((response)=> response.json())
-    .then((data)=> setDriverGeneralData(data)),
+    .then((data)=> setDriverGeneralData(data))
+    }
+    ,
     [])
 
     const [driverData, setdriverData] =useState(
@@ -27,7 +28,7 @@ function RegisterDrivers(){
 
     function handleSubmit(event){
         event.preventDefault()
-        fetch("http://localhost:9292/drivers",{
+        fetch("https://tasha-movers-backend.herokuapp.com/drivers",{
             method : "POST",
             headers :
             {
@@ -51,13 +52,13 @@ function RegisterDrivers(){
     const displayDrivers = drivergeneraldata.map((element)=>
     {
         return( 
-    <div class="col-md-3">
-        <div class="card p-2">
-            <div class="text-right">Vehicle Licensed : {element.vehicle_type_licensed}</div>
-            <div class="text-center mt-2 p-3"> <img src={element.driver_image_url} width="250" height="200"/> <span class="d-block font-weight-bold">Name: {element.name}</span>
+    <div key={element.id} className="col-md-3">
+        <div className="card p-2">
+            <div className="text-right">Vehicle Licensed : {element.vehicle_type_licensed}</div>
+            <div className="text-center mt-2 p-3"> <img src={element.driver_image_url} width="250" height="200"/> <span className="d-block font-weight-bold">Name: {element.name}</span>
                 <hr/> <span>Years of Experience: {element.years_of_experience}</span>
-                <div class="d-flex flex-row align-items-center justify-content-center"> <i class="fa fa-map-marker"></i>  </div>
-                <div class="d-flex justify-content-between mt-3"> <span></span> </div>
+                <div className="d-flex flex-row align-items-center justify-content-center"> <i className="fa fa-map-marker"></i>  </div>
+                <div className="d-flex justify-content-between mt-3"> <span></span> </div>
             </div>
         </div>
     </div>

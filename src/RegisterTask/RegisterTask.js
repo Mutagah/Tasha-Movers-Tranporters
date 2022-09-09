@@ -2,7 +2,7 @@ import React,{useState} from "react"
 import "./RegisterTask.css"
 import useFetch from "../customHooks/useFetch"
 function RegisterTask(){
-    const {data} = useFetch("http://localhost:9292/vehicles")
+    const {data} = useFetch("https://tasha-movers-backend.herokuapp.com/vehicles")
     const [formdata, setformdata] = useState({
         company_name:"",
         task_description:"",
@@ -22,13 +22,13 @@ function RegisterTask(){
     const displayVehicles = filteredDisplay.map((element)=>
         {
             return( 
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="text-right"> <small>{element.vehicle_type}</small> </div>
-                <div class="text-center mt-2 p-3"> <img src={element.vehicle_image_url} width="250" height="200"/> <span class="d-block font-weight-bold">{element.vehicle_type}</span>
+        <div key={element.id}className="col-md-3">
+            <div className="card p-2">
+                <div className="text-right"> <small>{element.vehicle_type}</small> </div>
+                <div className="text-center mt-2 p-3"> <img src={element.vehicle_image_url} width="250" height="200"/> <span className="d-block font-weight-bold">{element.vehicle_type}</span>
                     <hr/> <span>{element.registration_no}</span>
-                    <div class="d-flex flex-row align-items-center justify-content-center"> <i class="fa fa-map-marker"></i>  </div>
-                    <div class="d-flex justify-content-between mt-3"> <span><button classname="btn btn-dark btn-lg mt-4">Book me</button></span> </div>
+                    <div className="d-flex flex-row align-items-center justify-content-center"> <i className="fa fa-map-marker"></i>  </div>
+                    <div className="d-flex justify-content-between mt-3"> <span><button className="btn btn-dark btn-lg mt-4">Book me</button></span> </div>
                 </div>
             </div>
            
@@ -39,12 +39,9 @@ function RegisterTask(){
     {
         setformdata({...formdata,[event.target.name]:event.target.value})
     }
-
-
-    // console.log(formdata)
     function handleSubmit(event){
         event.preventDefault()
-        fetch("http://localhost:9292/tasks",{
+        fetch("https://tasha-movers-backend.herokuapp.com/tasks",{
             method : "POST",
             headers :
             {
