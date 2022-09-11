@@ -8,7 +8,7 @@ function Navbar(){
         <div className="linkStyling">
              <NavLink to="/">Home</NavLink>
              <NavLink to="registertask">Register Task</NavLink>
-             <NavLink to="registerdriver">Register Driver</NavLink>
+             <NavLink to="assignvehicle">Assign Vehicle</NavLink>
              <NavLink to="viewtask">View Task</NavLink>
             </div>
     </div>

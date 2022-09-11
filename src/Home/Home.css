@@ -32,3 +32,7 @@
     height: 255px;
     border-radius: 1rem 1rem 0 0;
 }
+/* t.string "registration_no"
+    t.string "vehicle_type"
+    t.string "vehicle_image_url"
+    t.string "vehicle_condition" */
