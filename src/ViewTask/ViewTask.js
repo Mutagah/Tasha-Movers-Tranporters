@@ -5,14 +5,14 @@ function ViewTask(){
 
     useEffect(()=>
     {
-        fetch("http://localhost:9292/tasks")
+        fetch("https://movers-backend-2.herokuapp.com/tasks")
         .then((resp)=> resp.json())
         .then((data)=> setData(data))
     },[])
 
     function handleClick(taskId)
     {
-        fetch(`http://localhost:9292/task/${taskId}`,{
+        fetch(`https://movers-backend-2.herokuapp.com/tasks/1/${taskId}`,{
           method : "DELETE",
         }).then(response => response.json())
         .then((data)=> console.log(data))

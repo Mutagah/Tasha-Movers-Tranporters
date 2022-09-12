@@ -44,7 +44,7 @@ function Home(){
             <div className="stylingpic">
            <div className="stylingpic container-fluid grid gap-10 px-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div className="row">
-              <div class="col-sm">
+              <div className="col-sm">
                   <div className="card carding" style={{width: "18rem"}}>
                   <img src="https://image.shutterstock.com/image-photo/truck-goes-on-highway-evening-600w-1551201551.jpg" className="card-img-top" alt="..."/>
                   <div className="card-body">
