@@ -1,22 +1,31 @@
-Project Name : Tasha Movers and Transporters
-Written by : Kihahu Mutaga
-Project Description :
+# Project Name : Tasha Movers and Transporters
+
+## Written by : Kihahu Mutaga
+
+## Project Description :
 Tasha Movers is a web application that seeks to provide companies and individuals with the transport services whenever mass movement of things is involved.
 
-Project Setup Instructions:
-Clone the project to your local machine and on successful cloning, change the directory to the cloned folder Tasha-Movers-Transporters.>>
-               `cd Tasha-Movers-Transporters`<<
+## Project Setup Instructions:
+Clone the project to your local machine and on successful cloning, change the directory to the cloned folder Tasha-Movers-Transporters.
+
+                    >> `cd Tasha-Movers-Transporters` <<
+
 Open the project in you suitable code editor.
+
 npm install to get all your packages and dependencies installed
 
 npm start should successfully launch your browser to your web browser
 
- - A successful resource that you are able to view would be >> `http://localhost:3000` << 
+ - A successful resource that you are able to view would be 
+ 
+                    >> `http://localhost:3000` << 
+
 The web page project is now readily available for interaction
 
 
 Link to Live Site on Github Pages:
 
+                `https://tasha-movers-frontend.herokuapp.com/`
       
 
 Copyright and License Information:
