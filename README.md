@@ -25,8 +25,9 @@ The web page project is now readily available for interaction
 
 ## Link to Live Site on Github Pages:
 
-                `https://tasha-movers-frontend.herokuapp.com/`
-      
+    Link1:      https://tasha-movers-frontend.herokuapp.com/
+
+    Link2:      https://tasha-movers-frontend-2.netlify.app/    
 
 ## Backend github link
             
