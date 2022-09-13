@@ -3,7 +3,7 @@
 ## Written by : Kihahu Mutaga
 
 ## Project Description :
-Tasha Movers is a web application that seeks to provide companies and individuals with the transport services whenever mass movement of things is involved.
+Tasha Movers is a web application that seeks to provide transport services to companies and individuals whenever mass movement of things is involved.
 
 ## Project Setup Instructions:
 Clone the project to your local machine and on successful cloning, change the directory to the cloned folder Tasha-Movers-Transporters.
@@ -36,7 +36,7 @@ The web page project is now readily available for interaction
 ## Backend deployed link
                 
                 https://movers-backend-2.herokuapp.com/tasks
-                
+
 ## Copyright and License Information:
                            Copyright (c) [2022] [Kihahu Mutaga]
 
