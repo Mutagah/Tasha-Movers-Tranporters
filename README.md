@@ -23,7 +23,7 @@ npm start should successfully launch your browser to your web browser
 The web page project is now readily available for interaction
 
 
-## Link to Live Site on Github Pages:
+## Link to Live Site:
 
     Link1:      https://tasha-movers-frontend.herokuapp.com/
 
@@ -31,10 +31,13 @@ The web page project is now readily available for interaction
 
 ## Backend github link
             
-                `https://github.com/Mutagah/Movers-Company-Backend`
+                https://github.com/Mutagah/Movers-Company-Backend
 
-
-Copyright and License Information:
+## Backend deployed link
+                
+                https://movers-backend-2.herokuapp.com/tasks
+                
+## Copyright and License Information:
                            Copyright (c) [2022] [Kihahu Mutaga]
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
