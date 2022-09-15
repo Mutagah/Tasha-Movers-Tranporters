@@ -4,12 +4,12 @@ import useFetch from "./useFetch"
 import Navbar from "./Navbar/Navbar"
 import React,{useState} from "react"
 import ViewTask from './ViewTask/ViewTask';
-import {Route,Switch} from "react-router-dom"
-import { useHistory } from 'react-router-dom'
+import {Route,Routes} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import RegisterTask from './RegisterTask/RegisterTask';
 import AssignVehicle from './AssignVehicle/AssignVehicle';
 function App() {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [driverId, setDriverId] = useState(0)
   const [vehicleId, setVehicleId] = useState(0)
   const {data, setdata} = useFetch("https://tasks-movers-backend.herokuapp.com/drivers")
@@ -61,25 +61,21 @@ function App() {
         })
         setDriverId(0)
         setVehicleId(0)
-        history.push("/viewtask")
+        navigate("/viewtask")
     }
   return (
     <div>
       <Navbar/>
-    <Switch> 
-        <Route exact path ="/">
-          <Home/>
-        </Route>
-        <Route exact path ="/registertask">
+    <Routes> 
+        <Route exact path ="/" element={<Home/>}/>
+        <Route exact path ="/registertask" element={
           <RegisterTask filteredDisplay={filteredDisplay} formdata={formdata} handleChange={handleChange} handleDriverAssigment={handleDriverAssigment} handleSearchCriteria={handleSearchCriteria}/>
-        </Route>
-        <Route exact path ="/assignvehicle">
+        }/>
+        <Route exact path ="/assignvehicle" element={
           <AssignVehicle setVehicleId={setVehicleId} handleTaskSubmission={handleTaskSubmission}/>
-        </Route>
-        <Route exact path ="/viewtask">
-          <ViewTask/>
-        </Route>
-      </Switch>
+        }/>
+        <Route exact path ="/viewtask" element={<ViewTask/>}/>
+      </Routes>
       </div>
   );
 }

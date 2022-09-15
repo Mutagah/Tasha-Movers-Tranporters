@@ -25,7 +25,7 @@ The web page project is now readily available for interaction
 
 ## Link to Live Site:
 
-    Link1:      https://tasha-movers-frontend.herokuapp.com/
+    Link1:      https://the-awesome-mutagah-site.netlify.app/
 
     Link2:      https://tasha-movers-frontend-2.netlify.app/    
 
