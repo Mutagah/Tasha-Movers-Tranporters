@@ -2,7 +2,7 @@ import React,{useEffect, useState} from "react"
 function AssignVehicle({handleTaskSubmission, setVehicleId}){
      const [vehicleData,setVehicleData] = useState([])
     useEffect(()=>{
-    fetch("https://movers-backend-2.herokuapp.com/vehicles")
+    fetch("https://tasks-movers-backend.herokuapp.com/vehicles")
     .then((response)=> response.json())
     .then((data)=> setVehicleData(data))
     }

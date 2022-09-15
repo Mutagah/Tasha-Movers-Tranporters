@@ -12,7 +12,7 @@ function App() {
   const history = useHistory()
   const [driverId, setDriverId] = useState(0)
   const [vehicleId, setVehicleId] = useState(0)
-  const {data, setdata} = useFetch("https://movers-backend-2.herokuapp.com/drivers")
+  const {data, setdata} = useFetch("https://tasks-movers-backend.herokuapp.com/drivers")
   const [searchCriteria, setSearchCriteria] = useState("")
     function handleSearchCriteria(event)
     {
@@ -45,7 +45,7 @@ function App() {
     console.log(formdata)
     function handleTaskSubmission(event){
         event.preventDefault()
-        fetch("https://movers-backend-2.herokuapp.com/tasks",{
+        fetch("https://tasks-movers-backend.herokuapp.com/tasks",{
             method : "POST",
             headers :
             {
@@ -63,8 +63,6 @@ function App() {
         setVehicleId(0)
         history.push("/viewtask")
     }
-    // console.log(vehicleId)
-
   return (
     <div>
       <Navbar/>
