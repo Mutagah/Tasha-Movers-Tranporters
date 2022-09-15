@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react"
 function AssignVehicle({handleTaskSubmission, setVehicleId}){
      const [vehicleData,setVehicleData] = useState([])
+     const [cartype, setCarType] = useState("")
     useEffect(()=>{
     fetch("https://tasks-movers-backend.herokuapp.com/vehicles")
     .then((response)=> response.json())
@@ -17,8 +18,14 @@ function AssignVehicle({handleTaskSubmission, setVehicleId}){
     })
     setVehicleData(filteredVehicles)
     }
-    
-    const displayVehicles = vehicleData.map((element)=>
+    function handleVehicleType(event){
+        setCarType(event.target.value) 
+    }
+    const filteredVehicles = vehicleData.filter((vehicle)=>
+        vehicle.vehicle_type.toLowerCase().includes(cartype.toLowerCase())
+    )
+
+    const displayVehicles = filteredVehicles.map((element)=>
     {
         return( 
     <div key={element.id} className="col-md-3">
@@ -35,6 +42,7 @@ function AssignVehicle({handleTaskSubmission, setVehicleId}){
     return(
         <div className="mt-3 mb-5">
         <h3 className="mt-4">Please pick a Vehicle and submit task at the bottom</h3>
+        <input type="text" placeholder="Enter vehicle type:(Van,Truck,Pick-up)" className="form-control form-control-lg" onChange={handleVehicleType}/>
     <div className="row mt-2 g-1">
         {displayVehicles}
     </div>
